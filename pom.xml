@@ -14,7 +14,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.compiler.release>11</maven.compiler.release>
  <sonar.host.url>http://13.233.93.193:9000/</sonar.host.url>
-  <sonar.login>YOUR_SONARQUBE_TOKEN</sonar.login> <!-- Use a valid SonarQube token if authentication is enabled -->
   </properties>
 
   <dependencies>
@@ -29,6 +28,11 @@
       <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
+   <dependency>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.12</version>
+</dependency>
   </dependencies>
 
   <build>
@@ -39,12 +43,7 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.1</version>
         </plugin>
-         <plugin>
-             <groupId>org.codehaus.mojo</groupId>
-             <artifactId>sonar-maven-plugin</artifactId>
-             <version>3.0.2</version>
-         </plugin>
-        <plugin>
+
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
           <version>0.8.11</version>
